@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block body %}
+<div >
+    <div class="card rounded-10px bg-gray-100 text-dark mb-0">
+        <div class="card-body p-0">
+            <div data-v-29bc7a28="" id="homepage_create_tinyurl_form" role="dialog" class="py-3 px-3">
+            <form action="/" method="post">
+                <div class="form">
+                    <label  for="long-url" class="font-weight-seminormal flex-center mb-3">
+                        
+                        <span data-v-29bc7a28="" class="ml-1">
+                                    Shorten a long URL
+                        </span>
+                    </label>
+                    <input  name ="long-url" id="long-url" type="text" aria-label="Long URL" placeholder="Enter long link here" class="form-control toned-placeholder bg-transparent rounded-xl text-green py-4"> 
+                    
+  
+                </div>
+                <div data-v-29bc7a28="" class="form-group mb-0">
+                    <button  type="submit" class="btn btn-primary">
+                        Shorten URL
+                    </button>
+                </div>
+            </form>
+            <ul>
+                {% if current_user.is_authenticated %}
+                {% for i in urls%}
+                <li>
+                        <h3>Original Link: {{i.long_link}}</h3>
+                        <h3>Short Link : <a href="{{i.long_link}}">{{i.link}}</a></h3>
+                        <h3> Date : {{i.created_at.strftime('%t%d/%b/%Y')}}</h3>
+                        {% endfor %}
+                </li>
+                                                    
+                    {% endif %}
+            </ul>
+            
+        </div>
+      
+    <!-- </div> <hr class="d-lg-none" style="border-top-color: rgba(255, 255, 255, 0.5); border-top-width: 0.5px;"></div></div> -->
+    
+{% endblock%}

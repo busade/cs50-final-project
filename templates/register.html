@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="container pt-5">
+        <div class="form">
+          
+          <br>
+          <form action="/register" method="POST">
+                <div class="mb-3">
+                    <h3>Create an Account</h3>
+                </div>
+                <div class="mb-3">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" name="full_name" class="form-control" placeholder="Full Name" required/>
+                </div>
+         
+                <div class="mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" required/>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" required/>
+                </div>
+                <div class="mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" required/>
+                </div>
+                <div class="mb-3">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form-control" required/>
+                </div>
+                <div class="mb-3">
+                    <p><input class="btn btn-primary" type="submit" value="Register" style="background-color:#14441c;color:#000"></p>
+                </div>
+                <a href="/login.html">Already Registerd? Login here </a>
+
+          </form>
+        </div>  
+    </div>    
+{%  endblock %}
